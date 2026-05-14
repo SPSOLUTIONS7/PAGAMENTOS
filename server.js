@@ -39,7 +39,6 @@ app.post("/webhook/pix", express.raw({ type: "application/json" }), (req, res) =
 });
 
 // O segredo está nesta linha: ela tenta pegar a porta do Railway primeiro
-const port = process.env.PORT || 8080; 
 
 app.listen(port, "0.0.0.0", () => {
     console.log(`Servidor rodando na porta ${port}`);
