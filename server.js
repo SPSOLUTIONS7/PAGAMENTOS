@@ -38,8 +38,11 @@ app.post("/webhook/pix", express.raw({ type: "application/json" }), (req, res) =
     res.json({ ok: true });
 });
 
-// O segredo está nesta linha: ela tenta pegar a porta do Railway primeiro
+// Define a porta dinamicamente (Railway) ou usa a 3000 localmente
+const port = process.env.PORT || 3000;
 
+// Inicia o servidor ouvindo em 0.0.0.0 para permitir acesso externo
 app.listen(port, "0.0.0.0", () => {
-    console.log(`Servidor rodando na porta ${port}`);
+    console.log(`🚀 Servidor rodando com sucesso!`);
+    console.log(`📍 Porta configurada: ${port}`);
 });
