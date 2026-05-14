@@ -38,4 +38,8 @@ app.post("/webhook/pix", express.raw({ type: "application/json" }), (req, res) =
     res.json({ ok: true });
 });
 
-app.listen(3000, () => console.log("🚀 Servidor em http://localhost:3000"));
+onst port = process.env.PORT || 3000;
+
+app.listen(port, "0.0.0.0", () => {
+    console.log(`🚀 Servidor rodando na porta ${port}`);
+});
