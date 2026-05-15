@@ -6,6 +6,7 @@ require('dotenv').config(); // Recomendado para proteger suas chaves
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public'));
 
 // 1. ROTA PARA CRIAR A COBRANÇA (O site vai chamar aqui)
 app.post("/criar-pix", async (req, res) => {
