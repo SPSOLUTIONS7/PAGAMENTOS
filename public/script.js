@@ -14,10 +14,10 @@ async function gerarPixAnimado() {
 
     try {
         // Chama o SEU servidor Node.js
-        const response = await fetch('http://localhost:3000/criar-pix', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ amount: valor })
+        const response = await fetch("https://pagamentos-production.up.railway.app/criar-pix", { 
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ amount: valor })
         });
 
         const data = await response.json();
